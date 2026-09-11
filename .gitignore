@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local environment
+.env
+
+# Downloaded source documents
+source_documents/
+
+# Extracted full text
+data/markdown/
+
+# Generated full-text chunks
+data/chunks.jsonl
+
+# Temporary browser download page
+download_pdfs.html
+
+# Download failures / temporary files
+data/pdf_download_failures.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# You can probably exclude the huge original metadata.csv
+data/metadata.csv
+
+# Temporary saved CDC search page
+data/pcd_type2_diabetes_results.html
+data/pcd_type2_diabetes_results_files/
+
