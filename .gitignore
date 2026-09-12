@@ -33,3 +33,5 @@ data/metadata.csv
 data/pcd_type2_diabetes_results.html
 data/pcd_type2_diabetes_results_files/
 
+# Generated embedding cache
+data/embeddings/

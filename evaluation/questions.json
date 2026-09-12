@@ -1,0 +1,102 @@
+[
+    {
+      "id": "Q01",
+      "category": "lifestyle_intervention",
+      "question": "How can lifestyle interventions prevent or delay type 2 diabetes?"
+    },
+    {
+      "id": "Q02",
+      "category": "weight_loss",
+      "question": "What is the role of weight loss in preventing type 2 diabetes?"
+    },
+    {
+      "id": "Q03",
+      "category": "physical_activity",
+      "question": "How does physical activity help reduce the risk of developing type 2 diabetes?"
+    },
+    {
+      "id": "Q04",
+      "category": "diet",
+      "question": "What role do dietary changes play in type 2 diabetes prevention?"
+    },
+    {
+      "id": "Q05",
+      "category": "prediabetes",
+      "question": "What interventions can reduce progression from prediabetes to type 2 diabetes?"
+    },
+    {
+      "id": "Q06",
+      "category": "diabetes_prevention_program",
+      "question": "What evidence supports the Diabetes Prevention Program for reducing type 2 diabetes risk?"
+    },
+    {
+      "id": "Q07",
+      "category": "long_term_effectiveness",
+      "question": "Do the benefits of lifestyle interventions for diabetes prevention persist over time?"
+    },
+    {
+      "id": "Q08",
+      "category": "program_implementation",
+      "question": "How can evidence-based diabetes prevention programs be implemented in community or health care settings?"
+    },
+    {
+      "id": "Q09",
+      "category": "workplace_prevention",
+      "question": "Can diabetes prevention lifestyle interventions be implemented successfully in workplace settings?"
+    },
+    {
+      "id": "Q10",
+      "category": "referral",
+      "question": "What factors influence referral of people with prediabetes to diabetes prevention programs?"
+    },
+    {
+      "id": "Q11",
+      "category": "screening",
+      "question": "Why is identifying and testing people at risk for prediabetes important for type 2 diabetes prevention?"
+    },
+    {
+      "id": "Q12",
+      "category": "gestational_diabetes",
+      "question": "How can women with a history of gestational diabetes reduce their risk of developing type 2 diabetes?"
+    },
+    {
+      "id": "Q13",
+      "category": "obesity",
+      "question": "How are overweight and obesity addressed in strategies to prevent type 2 diabetes?"
+    },
+    {
+      "id": "Q14",
+      "category": "health_disparities",
+      "question": "What barriers can affect participation in diabetes prevention programs among racial and ethnic minority populations?"
+    },
+    {
+      "id": "Q15",
+      "category": "community_prevention",
+      "question": "What role can community-based programs play in preventing type 2 diabetes?"
+    },
+    {
+      "id": "Q16",
+      "category": "healthcare_system",
+      "question": "How can health care systems support the implementation of diabetes prevention programs?"
+    },
+    {
+      "id": "Q17",
+      "category": "cost_effectiveness",
+      "question": "What does the evidence say about the cost-effectiveness of lifestyle interventions for preventing type 2 diabetes?"
+    },
+    {
+      "id": "Q18",
+      "category": "population_policy",
+      "question": "What role can public health policies play in reducing the population risk of type 2 diabetes?"
+    },
+    {
+      "id": "Q19",
+      "category": "insufficient_evidence",
+      "question": "Can lifestyle interventions guarantee that a person with prediabetes will never develop type 2 diabetes?"
+    },
+    {
+      "id": "Q20",
+      "category": "out_of_scope",
+      "question": "What is the best medication dose for an individual patient with type 2 diabetes?"
+    }
+  ]
