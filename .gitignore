@@ -35,3 +35,10 @@ data/pcd_type2_diabetes_results_files/
 
 # Generated embedding cache
 data/embeddings/
+
+evaluation/generated_answers.json
+evaluation/reference_answers.json
+evaluation/relevance_judgments.json
+evaluation/relevance_judgments_review.csv
+evaluation/relevance_judgments_review_filled.csv
+evaluation/retrieval_results.json

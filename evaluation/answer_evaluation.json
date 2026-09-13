@@ -1,0 +1,187 @@
+{
+  "evaluation_method": "LLM semantic comparison against reference answers",
+  "scoring": {
+    "2": "fully correct",
+    "1": "partially correct",
+    "0": "incorrect"
+  },
+  "n_questions": 20,
+  "summary": {
+    "fully_correct": 19,
+    "partially_correct": 1,
+    "incorrect": 0,
+    "total_points": 39,
+    "maximum_points": 40,
+    "percentage": 97.5
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "question": "How was giving birth to a macrosomic infant associated with a mother's subsequent risk of type 2 diabetes?",
+      "score": 2,
+      "reason": "The answer correctly states that giving birth to a first infant weighing 10 pounds or more was associated with increased subsequent maternal type 2 diabetes risk, and accurately reports the adjusted hazard ratio of 1.61 with the 95% CI of 1.24–2.08. The additional context is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q02",
+      "question": "What were the most commonly reported motivations for participating in the New York State YMCA Diabetes Prevention Program?",
+      "score": 2,
+      "reason": "The generated answer accurately includes the two most commonly reported motivations and their percentages, as well as the focus-group themes of health concerns linked to family history and avoiding medication dependence.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q03",
+      "question": "Why is early ascertainment of a woman's history of gestational diabetes important for preventive care between pregnancies?",
+      "score": 2,
+      "reason": "The answer correctly explains that identifying prior GDM enables preventive interconception care and highlights that recurrent GDM carries additional adverse newborn risks beyond an initial GDM pregnancy. The added information about diabetes screening and lifestyle support is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q04",
+      "question": "What factors were associated with sugar-sweetened beverage intake among adult patients in this study?",
+      "score": 2,
+      "reason": "The answer includes the key associations with younger age and lower intake among patients with diagnosed diabetes and hypertension, and appropriately describes related unhealthy-behavior factors such as smoking and diet. The additional associations are relevant and do not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q05",
+      "question": "Was greater diabetes-related knowledge associated with better cardiometabolic risk factors in this study?",
+      "score": 2,
+      "reason": "The answer correctly states that greater diabetes-related knowledge was not associated with better cardiometabolic risk factors, while appropriately noting that other household behaviors or social influences may explain differences.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q06",
+      "question": "What lifestyle changes associated with economic modernization were linked to the high prevalence of type 2 diabetes in American Samoa?",
+      "score": 2,
+      "reason": "The answer identifies both key lifestyle changes in the reference: reduced physical activity and a shift toward imported, energy-dense, highly processed foods. The additional details are relevant and do not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q07",
+      "question": "How did weight-loss success in the worksite DPP intervention compare with the original Diabetes Prevention Program?",
+      "score": 2,
+      "reason": "The answer correctly states that worksite weight-loss success was lower: 32.4% lost at least 7% of body weight versus 50% in the original 24-week DPP, and accurately gives the 17.6 percentage-point difference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q08",
+      "question": "What demographic and geographic characteristics were common among American adults with type 2 diabetes in this 2012 study?",
+      "score": 1,
+      "reason": "The answer correctly identifies the South as the most common census region and gives a percentage consistent with the reference. However, it omits the key demographic and socioeconomic characteristics: most were aged 46 or older, had a high school diploma, were unemployed, or had income below $20,000, and it omits that 82% lived in urban areas.",
+      "missing_reference_points": [
+        "43.8% were aged 46–64 and 42.8% were aged 65 or older",
+        "Adults with a high school diploma accounted for more than half of those with diabetes",
+        "Unemployed adults accounted for more than half",
+        "Those with annual income below $20,000 accounted for more than half",
+        "82% lived in urban areas"
+      ],
+      "contradictions": []
+    },
+    {
+      "id": "Q09",
+      "question": "What did the first-year evaluation of the Intermountain Healthcare Diabetes Prevention Program find regarding participation, weight loss, and type 2 diabetes incidence?",
+      "score": 2,
+      "reason": "The answer correctly reports that 8.4% of eligible patients with prediabetes participated, that participation was associated with achieving at least 5% weight loss, and that participants had lower type 2 diabetes incidence than nonparticipants. The added effect estimate and causal-association caveat are relevant and do not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q10",
+      "question": "How can lifestyle modification and the National Diabetes Prevention Program help people with prediabetes prevent or delay type 2 diabetes?",
+      "score": 2,
+      "reason": "The answer correctly explains that diet, physical activity, and weight loss can prevent or delay type 2 diabetes and accurately describes the National Diabetes Prevention Program as a structured, intensive lifestyle-change program. It also provides relevant supporting evidence without contradiction.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q11",
+      "question": "What evidence suggested that the study sample was representative of other Australian communities?",
+      "score": 2,
+      "reason": "The answer includes the key evidence from the reference: mean BMI patterns across demographic groups aligned with prior literature, suggesting representativeness. The additional supporting points and selection-bias caveat do not contradict this.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q12",
+      "question": "What is the role of Diabetes Self-Management Education and Support (DSMES), and when is it usually offered to people with diabetes?",
+      "score": 2,
+      "reason": "The answer correctly explains DSMES's role in connecting people with clinical services and providing self-management education and support, and it accurately identifies offering at diagnosis, annually, and during relevant transitions or complications. It does not explicitly mention that DSMES is guided by evidence-based standards, but this is a minor omission.",
+      "missing_reference_points": [
+        "Explicit statement that DSMES is guided by evidence-based standards"
+      ],
+      "contradictions": []
+    },
+    {
+      "id": "Q13",
+      "question": "How did the availability and number of DSMES programs change from baseline to year 3?",
+      "score": 2,
+      "reason": "The answer accurately reports both increases and all key figures: county availability rose from 54.7% to 57.0%, and the number of programs rose from 2,822 to 3,043, a 7.8% increase. It also correctly includes the state data coverage.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q14",
+      "question": "How did men and women with type 2 diabetes differ in their use of medical appointments in this study?",
+      "score": 2,
+      "reason": "The answer correctly states both key findings: men had lower rates of canceling or rescheduling appointments and were less likely to show up. The additional study-context information is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q15",
+      "question": "Why are hypertension and diabetes important targets for cardiovascular disease prevention in the United States?",
+      "score": 2,
+      "reason": "The answer includes all key reference points: hypertension and diabetes are CVD risk factors associated with premature death, CVD consumes about 1 in 7 health care dollars, hypertension affects nearly 78 million U.S. adults, and it is a major modifiable risk factor for CVD and stroke. The additional information is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q16",
+      "question": "What might explain the elevated risk of ICU admission among people with diabetes hospitalized with COVID-19?",
+      "score": 2,
+      "reason": "The answer captures both explanations in the reference: diabetes may be associated with more severe COVID-19, or health systems may have moved patients with diabetes to the ICU more proactively. The additional context is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q17",
+      "question": "Which self-care behaviors and patient factors may contribute to improved sustained diabetes management in people with type 2 diabetes?",
+      "score": 2,
+      "reason": "The answer includes diet, medication adherence, exercise, blood-glucose monitoring, self-efficacy/confidence, and broader self-management behaviors, and it notes that multidimensional patient profiles are associated with sustained diabetes management. Additional context is relevant and does not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q18",
+      "question": "How did fruit and vegetable consumption and glycemic control change among participants in the HEALED Produce Rx program?",
+      "score": 2,
+      "reason": "The answer correctly reports the increase in median fruit and vegetable consumption from 1.2 to 1.6 servings per day and states that glycemic control improved significantly.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q19",
+      "question": "What did the study find about public awareness of the maternal health benefits of breastfeeding, and which groups were less likely to believe in these benefits?",
+      "score": 2,
+      "reason": "The answer accurately reports low belief in breastfeeding's protection against the three maternal outcomes, notes that most respondents were neutral, and correctly identifies men, older adults, and unmarried respondents as less likely to believe in these benefits.",
+      "missing_reference_points": [],
+      "contradictions": []
+    },
+    {
+      "id": "Q20",
+      "question": "Which patient factors were associated with referral to the Montefiore Diabetes Prevention Program among eligible patients with prediabetes?",
+      "score": 2,
+      "reason": "The answer includes all key reference findings: higher BMI and HbA1c were associated with increased referral odds, middle age with higher odds, age 65 or older was not associated, and being uninsured versus having Medicaid with lower odds. The additional sex and race/ethnicity findings do not contradict the reference.",
+      "missing_reference_points": [],
+      "contradictions": []
+    }
+  ]
+}

@@ -1,102 +1,82 @@
 [
-    {
-      "id": "Q01",
-      "category": "lifestyle_intervention",
-      "question": "How can lifestyle interventions prevent or delay type 2 diabetes?"
-    },
-    {
-      "id": "Q02",
-      "category": "weight_loss",
-      "question": "What is the role of weight loss in preventing type 2 diabetes?"
-    },
-    {
-      "id": "Q03",
-      "category": "physical_activity",
-      "question": "How does physical activity help reduce the risk of developing type 2 diabetes?"
-    },
-    {
-      "id": "Q04",
-      "category": "diet",
-      "question": "What role do dietary changes play in type 2 diabetes prevention?"
-    },
-    {
-      "id": "Q05",
-      "category": "prediabetes",
-      "question": "What interventions can reduce progression from prediabetes to type 2 diabetes?"
-    },
-    {
-      "id": "Q06",
-      "category": "diabetes_prevention_program",
-      "question": "What evidence supports the Diabetes Prevention Program for reducing type 2 diabetes risk?"
-    },
-    {
-      "id": "Q07",
-      "category": "long_term_effectiveness",
-      "question": "Do the benefits of lifestyle interventions for diabetes prevention persist over time?"
-    },
-    {
-      "id": "Q08",
-      "category": "program_implementation",
-      "question": "How can evidence-based diabetes prevention programs be implemented in community or health care settings?"
-    },
-    {
-      "id": "Q09",
-      "category": "workplace_prevention",
-      "question": "Can diabetes prevention lifestyle interventions be implemented successfully in workplace settings?"
-    },
-    {
-      "id": "Q10",
-      "category": "referral",
-      "question": "What factors influence referral of people with prediabetes to diabetes prevention programs?"
-    },
-    {
-      "id": "Q11",
-      "category": "screening",
-      "question": "Why is identifying and testing people at risk for prediabetes important for type 2 diabetes prevention?"
-    },
-    {
-      "id": "Q12",
-      "category": "gestational_diabetes",
-      "question": "How can women with a history of gestational diabetes reduce their risk of developing type 2 diabetes?"
-    },
-    {
-      "id": "Q13",
-      "category": "obesity",
-      "question": "How are overweight and obesity addressed in strategies to prevent type 2 diabetes?"
-    },
-    {
-      "id": "Q14",
-      "category": "health_disparities",
-      "question": "What barriers can affect participation in diabetes prevention programs among racial and ethnic minority populations?"
-    },
-    {
-      "id": "Q15",
-      "category": "community_prevention",
-      "question": "What role can community-based programs play in preventing type 2 diabetes?"
-    },
-    {
-      "id": "Q16",
-      "category": "healthcare_system",
-      "question": "How can health care systems support the implementation of diabetes prevention programs?"
-    },
-    {
-      "id": "Q17",
-      "category": "cost_effectiveness",
-      "question": "What does the evidence say about the cost-effectiveness of lifestyle interventions for preventing type 2 diabetes?"
-    },
-    {
-      "id": "Q18",
-      "category": "population_policy",
-      "question": "What role can public health policies play in reducing the population risk of type 2 diabetes?"
-    },
-    {
-      "id": "Q19",
-      "category": "insufficient_evidence",
-      "question": "Can lifestyle interventions guarantee that a person with prediabetes will never develop type 2 diabetes?"
-    },
-    {
-      "id": "Q20",
-      "category": "out_of_scope",
-      "question": "What is the best medication dose for an individual patient with type 2 diabetes?"
-    }
-  ]
+  {
+    "id": "Q01",
+    "question": "How was giving birth to a macrosomic infant associated with a mother's subsequent risk of type 2 diabetes?"
+  },
+  {
+    "id": "Q02",
+    "question": "What were the most commonly reported motivations for participating in the New York State YMCA Diabetes Prevention Program?"
+  },
+  {
+    "id": "Q03",
+    "question": "Why is early ascertainment of a woman's history of gestational diabetes important for preventive care between pregnancies?"
+  },
+  {
+    "id": "Q04",
+    "question": "What factors were associated with sugar-sweetened beverage intake among adult patients in this study?"
+  },
+  {
+    "id": "Q05",
+    "question": "Was greater diabetes-related knowledge associated with better cardiometabolic risk factors in this study?"
+  },
+  {
+    "id": "Q06",
+    "question": "What lifestyle changes associated with economic modernization were linked to the high prevalence of type 2 diabetes in American Samoa?"
+  },
+  {
+    "id": "Q07",
+    "question": "How did weight-loss success in the worksite DPP intervention compare with the original Diabetes Prevention Program?"
+  },
+  {
+    "id": "Q08",
+    "question": "What demographic and geographic characteristics were common among American adults with type 2 diabetes in this 2012 study?"
+  },
+  {
+    "id": "Q09",
+    "question": "What did the first-year evaluation of the Intermountain Healthcare Diabetes Prevention Program find regarding participation, weight loss, and type 2 diabetes incidence?"
+  },
+  {
+    "id": "Q10",
+    "question": "How can lifestyle modification and the National Diabetes Prevention Program help people with prediabetes prevent or delay type 2 diabetes?"
+  },
+  {
+    "id": "Q11",
+    "question": "What evidence suggested that the study sample was representative of other Australian communities?"
+  },
+  {
+    "id": "Q12",
+    "question": "What is the role of Diabetes Self-Management Education and Support (DSMES), and when is it usually offered to people with diabetes?"
+  },
+  {
+    "id": "Q13",
+    "question": "How did the availability and number of DSMES programs change from baseline to year 3?"
+  },
+  {
+    "id": "Q14",
+    "question": "How did men and women with type 2 diabetes differ in their use of medical appointments in this study?"
+  },
+  {
+    "id": "Q15",
+    "question": "Why are hypertension and diabetes important targets for cardiovascular disease prevention in the United States?"
+  },
+  {
+    "id": "Q16",
+    "question": "What might explain the elevated risk of ICU admission among people with diabetes hospitalized with COVID-19?"
+  },
+  {
+    "id": "Q17",
+    "question": "Which self-care behaviors and patient factors may contribute to improved sustained diabetes management in people with type 2 diabetes?"
+  },
+  {
+    "id": "Q18",
+    "question": "How did fruit and vegetable consumption and glycemic control change among participants in the HEALED Produce Rx program?"
+  },
+  {
+    "id": "Q19",
+    "question": "What did the study find about public awareness of the maternal health benefits of breastfeeding, and which groups were less likely to believe in these benefits?"
+  },
+  {
+    "id": "Q20",
+    "question": "Which patient factors were associated with referral to the Montefiore Diabetes Prevention Program among eligible patients with prediabetes?"
+  }
+]
