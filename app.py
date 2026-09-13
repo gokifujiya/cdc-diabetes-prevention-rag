@@ -45,16 +45,16 @@ and are not a substitute for individualized medical advice.
 
 
 demo = gr.ChatInterface(
-    fn=chat,
-    title="CDC Diabetes Prevention RAG",
-    description=DESCRIPTION,
-    examples=[
+    fn = chat,
+    title = "CDC Diabetes Prevention RAG",
+    description = DESCRIPTION,
+    examples = [
         "How can lifestyle interventions prevent type 2 diabetes?",
         "How does physical activity help prevent type 2 diabetes?",
         "What is the role of weight loss in diabetes prevention?",
         "How can diabetes prevention programs help people with prediabetes?",
     ],
-    save_history=False,
+    save_history = False,
 )
 
 
