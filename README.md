@@ -412,6 +412,11 @@ Source corpus:
 
 **Centers for Disease Control and Prevention (CDC), Preventing Chronic Disease / CDC Stacks**
 
+The corpus was constructed from the CDC Stacks
+[Preventing Chronic Disease](https://stacks.cdc.gov/cbrowse?parentId=cdc%3A19611&subject_topic%5B%5D=Diabetes+Mellitus%2C+Type+2&maxResults=100)
+collection, filtered for:
+
+`Medical Subject = Diabetes Mellitus, Type 2`
 The public `knowledge_base/` contains only records explicitly tagged **Public Domain** in the CDC Stacks metadata used during corpus construction.
 
 The presence of a document in CDC Stacks should not by itself be interpreted as a statement that every hosted document is in the public domain.
@@ -421,3 +426,9 @@ The presence of a document in CDC Stacks should not by itself be interpreted as 
 This project is a research and software-engineering demonstration.
 
 The generated information is intended for educational and public-health purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+
+## 19. License
+
+The original software and code in this repository are licensed under the MIT License. See [LICENSE](LICENSE).
+
+CDC publications and source materials are not licensed under the MIT License by this repository. The public `knowledge_base/` contains only CDC Stacks records explicitly identified as Public Domain during corpus construction.
