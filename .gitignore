@@ -42,3 +42,6 @@ evaluation/relevance_judgments.json
 evaluation/relevance_judgments_review.csv
 evaluation/relevance_judgments_review_filled.csv
 evaluation/retrieval_results.json
+
+# Generated highlighted evidence PDFs
+data/highlighted_pdfs/

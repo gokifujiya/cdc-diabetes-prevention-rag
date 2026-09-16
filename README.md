@@ -6,9 +6,17 @@ The project combines lexical and semantic retrieval, Reciprocal Rank Fusion, Cro
 
 ## Demo
 
-![CDC Diabetes Prevention RAG demo](assets/cdc_diabetes_rag_demo.png)
-
 The application retrieves evidence from CDC *Preventing Chronic Disease* publications and generates source-cited, evidence-grounded answers using hybrid retrieval and CrossEncoder reranking.
+
+The evidence viewer identifies the CDC sources cited in the generated answer and provides access to both the original CDC publications and locally generated highlighted evidence.
+
+![CDC Diabetes Prevention RAG evidence viewer](assets/evidence_viewer_demo.png)
+
+The highlighted PDF provides a visual evidence-location aid by marking retrieved supporting passages on the cited page of the original publication.
+
+![Highlighted evidence in CDC source PDF](assets/evidence_highlight_example.png)
+
+Highlighting is intended to help locate supporting evidence rather than provide exact claim-to-sentence attribution. Relevant evidence may also appear immediately before or after the highlighted passage.
 
 ## 1. Project overview
 
@@ -135,7 +143,45 @@ The answer-generation prompt instructs the model to:
 
 The chatbot is intended for educational and public-health information and is **not a substitute for individualized medical advice**.
 
-## 6. Evaluation benchmark
+## 6. Evidence highlighting
+
+The chatbot includes an evidence-highlighting feature to improve source traceability. For sources cited in a generated answer, the interface provides a link to the original CDC Stacks publication and generates a local PDF in which retrieved supporting passages are highlighted.
+
+The evidence workflow is:
+
+```text
+Generated answer
+        │
+        ▼
+   [Source N]
+        │
+        ▼
+ Retrieved evidence
+        │
+        ▼
+ CDC document + page
+        │
+        ▼
+Highlighted PDF evidence
+```
+
+For each cited source, the evidence panel displays:
+
+- the source title and page number,
+- a link to the original CDC Stacks publication, and
+- a generated PDF with supporting evidence highlighted.
+
+Highlighting is implemented with PyMuPDF by matching text from the retrieved evidence chunk to text on the corresponding PDF page.
+
+### Highlighting limitations
+
+The highlighting is intended as an **evidence-location aid**, rather than an exact claim-to-sentence attribution system. Retrieved chunks may contain surrounding context in addition to the passage directly supporting the generated answer. **Relevant supporting evidence may therefore occur immediately before or after a highlighted passage on the cited page.**
+
+PDF text extraction can also introduce differences in line breaks, hyphenation, whitespace, and text ordering. As a result, some supporting text may be partially highlighted or may remain unhighlighted even when it appears near the matched evidence.
+
+The original CDC publication remains the authoritative source and is provided alongside the highlighted PDF.
+
+## 7. Evaluation benchmark
 
 The system was evaluated using a fixed benchmark of **20 questions**.
 
@@ -149,11 +195,11 @@ The benchmark separates:
 
 Reference answers and evidence are never supplied to the RAG system during answer generation.
 
-## 7. Retrieval evaluation
+## 8. Retrieval evaluation
 
 Retrieval was evaluated in two complementary ways.
 
-### 7.1 Known-reference evaluation
+### 8.1 Known-reference evaluation
 
 The human-selected source passage for each question provides a known relevant anchor.
 
@@ -169,7 +215,7 @@ Evaluation was performed at document, page, and exact-chunk levels.
 
 A key result was that **BM25 performed particularly strongly for exact page and chunk retrieval**, showing the value of lexical matching for evidence-specific scientific questions.
 
-### 7.2 Pooled graded relevance evaluation
+### 8.2 Pooled graded relevance evaluation
 
 A single reference passage does not represent every medically relevant document that could answer a question.
 
@@ -218,7 +264,7 @@ This contrasts with the known-reference evaluation, where BM25 was stronger for 
 
 The difference illustrates an important RAG evaluation issue: a retriever can fail to recover one predefined reference passage while still retrieving different documents that are medically relevant to the question.
 
-## 8. Answer evaluation
+## 9. Answer evaluation
 
 Retrieval quality alone does not establish that the final generated answer is correct.
 
@@ -251,7 +297,7 @@ The automated evaluation therefore rated **19 of 20 answers fully correct, one p
 
 This score is an automated semantic evaluation rather than a substitute for expert medical adjudication.
 
-## 9. Failure analysis
+## 10. Failure analysis
 
 The only partially correct answer was **Q08**, concerning demographic and geographic characteristics of U.S. adults with type 2 diabetes.
 
@@ -265,7 +311,7 @@ Importantly, the model did not fabricate the missing statistics. It stated that 
 
 This represents a **conservative retrieval/context failure rather than a hallucinated answer**.
 
-## 10. Why multiple evaluation methods matter
+## 11. Why multiple evaluation methods matter
 
 The evaluation produced a useful contrast:
 
@@ -278,7 +324,7 @@ This demonstrates why RAG systems should not be evaluated using only one retriev
 
 Retrieval evaluation and answer evaluation measure different parts of the system.
 
-## 11. Repository structure
+## 12. Repository structure
 
 ```text
 cdc_diabetes_rag/
@@ -311,7 +357,7 @@ cdc_diabetes_rag/
 
 Large local corpus files, embeddings, retrieved passages, and evidence-containing evaluation artifacts are intentionally excluded from the public repository.
 
-## 12. Key implementation files
+## 13. Key implementation files
 
 - `implementation/retrieval.py` — BM25 lexical retrieval
 - `implementation/embeddings.py` — dense retrieval and persistent embedding cache
@@ -327,7 +373,7 @@ Large local corpus files, embeddings, retrieved passages, and evidence-containin
 - `scripts/map_reference_chunks.py` — benchmark-to-corpus reference mapping
 - `scripts/validate_reference_chunks.py` — benchmark mapping validation
 
-## 13. Running the project
+## 14. Running the project
 
 Create and activate a Python virtual environment and install the project dependencies.
 
@@ -363,7 +409,7 @@ Run automated answer evaluation:
 python .\evaluation\evaluate_answers.py
 ```
 
-## 14. Local data and reproducibility
+## 15. Local data and reproducibility
 
 Some artifacts are intentionally not included in the public repository because they contain full-text or extracted passages from CDC Stacks records that are not explicitly tagged Public Domain.
 
@@ -379,7 +425,7 @@ These include local:
 
 The public repository therefore demonstrates the implementation, evaluation methodology, benchmark questions, public-domain knowledge base, and aggregate evaluation results without redistributing the complete local corpus.
 
-## 15. Limitations
+## 16. Limitations
 
 This project has several important limitations.
 
@@ -393,7 +439,7 @@ Fourth, the 97.5% answer score is based on automated semantic evaluation. Expert
 
 Finally, the system is designed for evidence-grounded educational information, not diagnosis, treatment selection, medication dosing, or individualized medical decision-making.
 
-## 16. Future work
+## 17. Future work
 
 Potential extensions include:
 
@@ -402,11 +448,10 @@ Potential extensions include:
 - medical-domain reranking models,
 - larger physician-reviewed benchmark sets,
 - multidimensional answer evaluation for correctness, completeness, evidence grounding, citation accuracy, study-context fidelity, and medical safety,
-- automated citation verification,
-- highlighted source evidence in original PDF pages, and
+- automated citation verification, and
 - broader CDC diabetes and chronic-disease corpora.
 
-## 17. Data source and attribution
+## 18. Data source and attribution
 
 Source corpus:
 
@@ -421,13 +466,13 @@ The public `knowledge_base/` contains only records explicitly tagged **Public Do
 
 The presence of a document in CDC Stacks should not by itself be interpreted as a statement that every hosted document is in the public domain.
 
-## 18. Disclaimer
+## 19. Disclaimer
 
 This project is a research and software-engineering demonstration.
 
 The generated information is intended for educational and public-health purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
 
-## 19. License
+## 20. License
 
 The original software and code in this repository are licensed under the MIT License. See [LICENSE](LICENSE).
 
