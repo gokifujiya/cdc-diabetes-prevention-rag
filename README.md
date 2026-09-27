@@ -406,7 +406,7 @@ Create and activate a Python virtual environment and install the project depende
 Set the OpenAI API key in a local `.env` file:
 
 ```text
-OPENAI_API_KEY = your_api_key
+OPENAI_API_KEY=your_api_key
 ```
 
 The `.env` file should not be committed to Git.
