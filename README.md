@@ -77,20 +77,38 @@ CDC Stacks / Preventing Chronic Disease
         BM25          Dense retrieval
           │                │
           └───────┬────────┘
-                  ▼
-       Reciprocal Rank Fusion
                   │
-                  ▼
-        CrossEncoder reranking
                   │
-                  ▼
-       Top evidence passages
-                  │
-                  ▼
-     Evidence-grounded LLM prompt
-                  │
-                  ▼
-       Answer + CDC references
+User question    │
+      │           │
+      ▼           │
+Scope guard       │
+      │           │
+      ├── Out of scope ─────────► Rejection message
+      │           │
+      ▼           │
+ In-scope query   │
+      │           │
+      └───────┬───┘
+              ▼
+     Hybrid retrieval
+              │
+              ▼
+   Reciprocal Rank Fusion
+              │
+              ▼
+    CrossEncoder reranking
+              │
+              ▼
+   Top evidence passages
+              │
+              ▼
+ Evidence-grounded LLM prompt
+              │
+              ├──────────────────► Evidence highlighting
+              │                         │
+              ▼                         ▼
+ Answer + CDC references       Highlighted source PDFs
 ```
 
 ## 4. Retrieval methods
@@ -329,6 +347,9 @@ Retrieval evaluation and answer evaluation measure different parts of the system
 ```text
 cdc_diabetes_rag/
 ├── app.py
+├── Dockerfile
+├── .dockerignore
+├── requirements-docker.txt
 ├── evaluator.py
 ├── rag_pipeline.ipynb
 ├── implementation/
@@ -338,7 +359,8 @@ cdc_diabetes_rag/
 │   ├── hybrid_retrieval.py
 │   ├── reranker.py
 │   ├── prompts.py
-│   └── answer.py
+│   ├── answer.py
+│   └── evidence_highlighter.py
 ├── evaluation/
 │   ├── questions.json
 │   ├── retrieval_evaluation.ipynb
@@ -355,7 +377,7 @@ cdc_diabetes_rag/
 └── source_documents/
 ```
 
-Large local corpus files, embeddings, retrieved passages, and evidence-containing evaluation artifacts are intentionally excluded from the public repository.
+Large local corpus files, embeddings, retrieved passages, source PDFs, generated highlighted PDFs, and evidence-containing evaluation artifacts are intentionally excluded from the public repository.
 
 ## 13. Key implementation files
 
@@ -365,7 +387,11 @@ Large local corpus files, embeddings, retrieved passages, and evidence-containin
 - `implementation/reranker.py` — CrossEncoder reranking
 - `implementation/prompts.py` — evidence-grounding and medical-safety instructions
 - `implementation/answer.py` — end-to-end RAG answer pipeline
-- `app.py` — Gradio chatbot
+- `implementation/evidence_highlighter.py` — generation of highlighted supporting-evidence PDFs
+- `app.py` — Gradio chatbot, scope guard, and evidence-viewer interface
+- `Dockerfile` — container definition for the application
+- `requirements-docker.txt` — minimal Docker runtime dependencies
+- `.dockerignore` — files excluded from the Docker build context
 - `evaluator.py` — quantitative retrieval evaluation
 - `evaluation/retrieval_evaluation.ipynb` — retrieval analysis and graded relevance evaluation
 - `evaluation/generate_sample_answers.py` — benchmark answer generation
@@ -408,6 +434,30 @@ Run automated answer evaluation:
 ```powershell
 python .\evaluation\evaluate_answers.py
 ```
+
+### Docker
+
+The application can also be run in a Docker container, providing a reproducible environment for the Gradio interface, hybrid retrieval pipeline, CrossEncoder reranking, and evidence-highlighting workflow.
+
+Build the Docker image from the project root:
+
+```powershell
+docker build -t cdc-diabetes-rag .
+```
+
+Run the container with the OpenAI API key supplied through the local `.env` file:
+
+```powershell
+docker run --rm -p 7860:7860 --env-file .env cdc-diabetes-rag
+```
+
+Then open:
+
+```text
+http://localhost:7860/
+```
+
+The `.env` file is excluded from the Docker build context and should not be committed to the repository.
 
 ## 15. Local data and reproducibility
 

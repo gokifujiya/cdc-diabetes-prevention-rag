@@ -12,6 +12,44 @@ print("Initializing CDC Diabetes Prevention RAG...")
 pipeline = CDCAnswerPipeline()
 
 
+def is_in_scope(query: str) -> bool:
+    q = query.lower()
+
+    diabetes_terms = {
+        "diabetes",
+        "type 2 diabetes",
+        "type ii diabetes",
+        "prediabetes",
+        "pre-diabetes",
+        "diabetes prevention",
+        "prevent diabetes",
+        "diabetes risk",
+        "blood glucose",
+        "blood sugar",
+        "glycemic",
+        "glycaemic",
+        "a1c",
+        "hba1c",
+        "insulin resistance",
+        "lifestyle intervention",
+        "lifestyle change",
+        "physical activity",
+        "exercise",
+        "weight loss",
+        "weight management",
+        "obesity",
+        "overweight",
+        "diet",
+        "nutrition",
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "dpp",
+        "cdc diabetes",
+    }
+
+    return any(term in q for term in diabetes_terms)
+
+
 def get_cited_source_numbers(answer: str) -> list[int]:
     """
     Extract source numbers used in citations such as:
@@ -42,6 +80,17 @@ def chat(
 
     if not message.strip():
         return "Please enter a question.", [], ""
+
+    # Reject questions outside the CDC diabetes-prevention scope
+    # before running retrieval or calling the OpenAI API.
+    if not is_in_scope(message):
+        return (
+            "This system is limited to questions about type 2 diabetes "
+            "prevention based on the CDC corpus. Please ask a question "
+            "within that scope.",
+            [],
+            "",
+        )
 
     try:
         result = pipeline.answer(message)
@@ -200,4 +249,7 @@ with gr.Blocks() as demo:
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=7860,
+    )

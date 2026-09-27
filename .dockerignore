@@ -1,0 +1,10 @@
+.venv
+.git
+.gitignore
+.env
+__pycache__
+*.pyc
+.pytest_cache
+.ipynb_checkpoints
+
+data/highlighted_pdfs/

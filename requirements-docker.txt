@@ -1,0 +1,6 @@
+gradio
+openai
+python-dotenv
+sentence-transformers
+rank-bm25
+PyMuPDF
