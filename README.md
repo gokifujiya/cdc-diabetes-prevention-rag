@@ -1,10 +1,14 @@
 # CDC Diabetes Prevention RAG
 
-An evidence-grounded Retrieval-Augmented Generation (RAG) system for answering questions about type 2 diabetes using scientific publications from the CDC *Preventing Chronic Disease* collection.
+An evidence-grounded Retrieval-Augmented Generation (RAG) system for answering questions about **type 2 diabetes prevention** using scientific publications from the CDC *Preventing Chronic Disease* collection.
 
-The project combines lexical and semantic retrieval, Reciprocal Rank Fusion, CrossEncoder reranking, evidence-constrained LLM generation, medical-safety prompting, and a multi-stage evaluation framework.
+The project combines lexical and semantic retrieval, Reciprocal Rank Fusion, CrossEncoder reranking, evidence-constrained LLM generation, medical-safety prompting, evidence highlighting, scope restriction, and a multi-stage evaluation framework.
 
 ## Demo
+
+🎥 **Video demonstration:** [CDC Diabetes Prevention RAG — Project Demo](https://vimeo.com/1232733972)
+
+The video demonstrates the complete RAG workflow, including corpus preprocessing, hybrid BM25 + dense retrieval, Reciprocal Rank Fusion, CrossEncoder reranking, evidence-grounded answer generation, scope restriction, source citation, highlighted supporting evidence, and system evaluation.
 
 The application retrieves evidence from CDC *Preventing Chronic Disease* publications and generates source-cited, evidence-grounded answers using hybrid retrieval and CrossEncoder reranking.
 
@@ -72,43 +76,48 @@ CDC Stacks / Preventing Chronic Disease
                   ▼
         Page-aware chunking
                   │
-          ┌───────┴────────┐
-          ▼                ▼
-        BM25          Dense retrieval
-          │                │
-          └───────┬────────┘
+                  ▼
+          Searchable corpus
                   │
                   │
-User question    │
+User question     │
       │           │
       ▼           │
 Scope guard       │
       │           │
-      ├── Out of scope ─────────► Rejection message
+      ├── Out of scope ───────► Rejection message
       │           │
       ▼           │
  In-scope query   │
       │           │
       └───────┬───┘
               ▼
-     Hybrid retrieval
+       Hybrid retrieval
+        ┌─────┴─────┐
+        ▼           ▼
+      BM25        Dense
+     lexical      semantic
+    retrieval     retrieval
+        │           │
+        └─────┬─────┘
+              ▼
+    Reciprocal Rank Fusion
               │
               ▼
-   Reciprocal Rank Fusion
+     CrossEncoder reranking
               │
               ▼
-    CrossEncoder reranking
+      Top evidence passages
               │
               ▼
-   Top evidence passages
+   Evidence-grounded LLM
               │
-              ▼
- Evidence-grounded LLM prompt
-              │
-              ├──────────────────► Evidence highlighting
-              │                         │
-              ▼                         ▼
- Answer + CDC references       Highlighted source PDFs
+        ┌─────┴──────────────┐
+        ▼                    ▼
+Answer + CDC references   Evidence highlighting
+                              │
+                              ▼
+                    Highlighted source PDFs
 ```
 
 ## 4. Retrieval methods
